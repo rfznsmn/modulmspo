@@ -145,29 +145,27 @@ modules = {
     },
     "Prinsip 2": {
         "title": "Ketelusan",
-        "link": "https://onedrive.live.com/your-link-here-principle-2",
+        "link": "https://feldagov-my.sharepoint.com/personal/jk_felda_feldagov_onmicrosoft_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjk%5Ffelda%5Ffeldagov%5Fonmicrosoft%5Fcom%2FDocuments%2FSupporting%20Documents%20MSPO%202%2E0%2FP2%20Ketelusan&viewid=4533d408%2D9220%2D4295%2Db459%2D4fc98a267c5c&ga=1",
     },
     "Prinsip 3": {
         "title": "Pematuhan Kepada Undang-Undang dan Perkara Berkaitan",
-        "link": "https://onedrive.live.com/your-link-here-principle-3",
+        "link": "https://feldagov-my.sharepoint.com/personal/jk_felda_feldagov_onmicrosoft_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjk%5Ffelda%5Ffeldagov%5Fonmicrosoft%5Fcom%2FDocuments%2FSupporting%20Documents%20MSPO%202%2E0%2FP3%20Pematuhan%20kepada%20Keperluan%20Undang%2Dundang&viewid=4533d408%2D9220%2D4295%2Db459%2D4fc98a267c5c&ga=1",
     },
     "Prinsip 4": {
         "title": "Tanggungjawab Sosial, Kesihatan, Keselamatan dan Terma Pekerjaan",
-        "link": "https://onedrive.live.com/your-link-here-principle-4",
+        "link": "https://feldagov-my.sharepoint.com/personal/jk_felda_feldagov_onmicrosoft_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjk%5Ffelda%5Ffeldagov%5Fonmicrosoft%5Fcom%2FDocuments%2FSupporting%20Documents%20MSPO%202%2E0%2FP4%20Tanggungjawab%20Sosial%2C%20Keselamatan%2C%20Kesihatan%20dan%20Keadaan%20Pekerjaan&viewid=4533d408%2D9220%2D4295%2Db459%2D4fc98a267c5c&ga=1",
     },
     "Prinsip 5": {
         "title": "Alam Sekitar, Sumber Asli, Kepelbagaian Biologi dan Penjagaan Ekosistem",
-        "link": "https://onedrive.live.com/your-link-here-principle-5",
+        "link": "https://feldagov-my.sharepoint.com/personal/jk_felda_feldagov_onmicrosoft_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjk%5Ffelda%5Ffeldagov%5Fonmicrosoft%5Fcom%2FDocuments%2FSupporting%20Documents%20MSPO%202%2E0%2FP5%20Alam%20Sekitar%2C%20Sumber%20Asli%2C%20Biodiversiti%20dan%20Perkhidmatan%20Ekosistem&viewid=4533d408%2D9220%2D4295%2Db459%2D4fc98a267c5c&ga=1",
     },
     "Rujukan": {
         "title": "Dokumen Manual, Polisi dan Prosedur",
-        "link": "https://onedrive.live.com/your-link-here-rujukan",
+        "link": "https://feldagov-my.sharepoint.com/personal/jk_felda_feldagov_onmicrosoft_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjk%5Ffelda%5Ffeldagov%5Fonmicrosoft%5Fcom%2FDocuments%2FSupporting%20Documents%20MSPO%202%2E0%2FP6%20Polisi%20dan%20Prosedur&viewid=4533d408%2D9220%2D4295%2Db459%2D4fc98a267c5c&ga=1",
     }
 }
 
-# --- Modul Latihan (Single Column Layout) ---
-#st.markdown("## 📘 Modul Latihan")
-
+# --- Display Modules with Clickable Links ---
 for key, module in modules.items():
     with st.container():
         st.markdown(f"""
@@ -176,19 +174,35 @@ for key, module in modules.items():
         </div>
         """, unsafe_allow_html=True)
 
-        if st.button(f"📥 Akses {key}", key=key):
-            # Redirects to link in new tab
-            js = f"window.open('{module['link']}', '_blank').focus();"
-            st.markdown(f"<script>{js}</script>", unsafe_allow_html=True)
+        # Create a link button that opens OneDrive
+        st.markdown(f"""
+        <a href="{module['link']}" target="_blank">
+            <button style="
+                width: 100%;
+                background: linear-gradient(90deg, #2E7D32, #43A047);
+                color: white;
+                border: none;
+                border-radius: 8px;
+                padding: 0.9rem;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            ">
+                📥 Akses {key}
+            </button>
+        </a>
+        """, unsafe_allow_html=True)
 
+st.markdown("---")
 
 
 # --- Footer ---
 st.markdown("""
 ### 📞 Hubungi Kami
 Untuk sebarang pertanyaan berkaitan E-Modul MSPO FELDA:
-- **Email**: training@felda.gov.my  
-- **Telefon**: +60 3-XXXX XXXX
+- **Email**: kelestarian.f@felda.net.my  
+
 
 ---
 © 2025 FELDA | Malaysian Sustainable Palm Oil (MSPO)
