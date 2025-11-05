@@ -136,7 +136,7 @@ for a in announcements:
 st.markdown("---")
 
 # --- Module Links ---
-st.markdown("## 📘 Modul Latihan")
+st.markdown("## 📘 Modul MSPO 2.0")
 
 modules = {
     "Prinsip 1": {
