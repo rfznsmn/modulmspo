@@ -106,7 +106,7 @@ Untuk sebarang pertanyaan mengenai modul ini, sila hubungi:
 
 # Sidebar with additional information
 with st.sidebar:
-    st.image("https://via.placeholder.com/300x100/2E7D32/FFFFFF?text=FELDA+MSPO", use_container_width=True)
+    st.image("https://via.placeholder.com/300x100/2E7D32/FFFFFF?text=FELDA+MSPO", use_column_width=True)
     st.markdown("### Panduan Penggunaan")
     st.markdown("""
     1. Pilih prinsip yang ingin dipelajari
