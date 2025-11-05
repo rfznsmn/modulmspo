@@ -177,10 +177,9 @@ for key, module in modules.items():
         """, unsafe_allow_html=True)
 
         if st.button(f"📥 Akses {key}", key=key):
-            # Opens link directly without showing message
-            pass
-
-st.markdown("---")
+            # Redirects to link in new tab
+            js = f"window.open('{module['link']}', '_blank').focus();"
+            st.markdown(f"<script>{js}</script>", unsafe_allow_html=True)
 
 
 # --- Footer ---
