@@ -105,7 +105,7 @@ modules = {
         "link": "https://onedrive.live.com/your-link-here-principle-1",
     },
     "Prinsip 2": {
-        "title": "Prinsip 2: Ketelusan                                           ",
+        "title": "Prinsip 2: Ketelusan                            ",
         "link": "https://onedrive.live.com/your-link-here-principle-2",
     },
     "Prinsip 3": {
@@ -120,7 +120,7 @@ modules = {
         "title": "Prinsip 5: Alam Sekitar, Sumber Asli, Kepelbagaian Biologi dan Penjagaan Ekosistem",
         "link": "https://onedrive.live.com/your-link-here-principle-5",
     },
-    "Rujukan": {
+    "Manual FELDA": {
         "title": "Dokumen Manual, Polisi dan Prosedur",
         "link": "https://onedrive.live.com/your-link-here-rujukan",
     }    
