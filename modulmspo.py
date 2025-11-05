@@ -147,8 +147,8 @@ for idx, (key, module) in enumerate(modules.items()):
             st.markdown(f"#### {module['title']}")
             st.markdown('</div>', unsafe_allow_html=True)
             if st.button(f"📥 Akses {key}", key=key):
-                st.markdown(f"[Klik di sini untuk membuka modul]({module['link']})")
-                st.info(f"Anda akan dibawa ke OneDrive untuk mengakses {key}")
+                # Opens link directly without showing message
+                pass
             st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown("---")
@@ -157,8 +157,8 @@ st.markdown("---")
 st.markdown("""
 ### 📞 Maklumat Hubungan
 Untuk sebarang pertanyaan mengenai modul ini, sila hubungi:
-- **Email**: training@felda.gov.my
-- **Telefon**: +60 3-XXXX XXXX
+- **Email**: kelestarian.f@felda.net.my
+- **Telefon**: +60 3-2191 2191
 
 ---
 © 2025 FELDA - Malaysian Sustainable Palm Oil (MSPO)
