@@ -3,7 +3,7 @@ import streamlit as st
 # Page configuration
 st.set_page_config(
     page_title="E-Modul MSPO FELDA",
-    page_icon="📚",
+    page_icon="feldalogo.png",
     layout="wide"
 )
 
