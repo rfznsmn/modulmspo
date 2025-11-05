@@ -62,8 +62,8 @@ announcements = [
     {
         "date": "November 2025",
         "title": "Jadual Internal Audit Oktober",
-        "content": "Audit dalaman Gugusan Jengka 18 akan dijalankan pada 5-7 November 2025.",
-        "Audit dalaman Gugusan Maokil akan dijalankan pada 11-13 November 2025.",
+        "content": "Audit dalaman Gugusan Jengka 18 akan dijalankan pada 5-7 November 2025."
+        "Audit dalaman Gugusan Maokil akan dijalankan pada 11-13 November 2025."
         "Sila pastikan semua dokumentasi lengkap.",
         "type": "info"
     },
