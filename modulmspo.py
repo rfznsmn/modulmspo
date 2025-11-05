@@ -95,7 +95,7 @@ dan pelaksanaan prinsip-prinsip MSPO di semua rancangan FELDA.
 st.markdown("---")
 
 # --- Announcement Board ---
-st.markdown("## 📢 Papan Pengumuman")
+st.markdown("## 📢 Pengumuman")
 
 announcements = [
     {
@@ -117,7 +117,7 @@ Sila pastikan semua dokumentasi lengkap sebelum tarikh audit."""
     },
     {
         "date": "November 2025",
-        "title": "📅 Tiada Audit Luaran Bulan Ini",
+        "title": "📅 Jadual External Audit November",
         "content": """Tiada audit luaran MSPO dijadualkan pada bulan ini.  
 Teruskan mengekalkan pematuhan kepada standard MSPO."""
     }
