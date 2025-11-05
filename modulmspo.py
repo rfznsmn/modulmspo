@@ -114,7 +114,7 @@ modules = {
         "title": "Prinsip 5: Alam Sekitar, Sumber Asli, Kepelbagaian Biologi dan Penjagaan Ekosistem",
         "link": "https://onedrive.live.com/your-link-here-principle-5",
         #"description": "Modul pembelajaran mengenai tanggungjawab sosial dan kesihatan pekerja"
-    }
+    },
     "Rujukan": {
         "title": "Dokumen Manual, Polisi dan Prosedur",
         "link": "https://onedrive.live.com/your-link-here-principle-5",
