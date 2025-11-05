@@ -174,7 +174,9 @@ for idx, (key, module) in enumerate(modules.items()):
         </div>
         """, unsafe_allow_html=True)
         if st.button(f"📥 Akses {key}", key=key):
-            st.markdown(f"[Buka Modul 🔗]({module['link']})", unsafe_allow_html=True)
+                # Opens link directly without showing message
+                pass
+            st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown("---")
 
