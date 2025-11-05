@@ -107,15 +107,17 @@ FELDA kini berjaya mencapai **100% pensijilan MSPO** bagi semua rancangan, hasil
     {
         "date": "November 2025",
         "title": "📅 Jadual Internal Audit November",
-        "content": """Audit dalaman akan dijalankan seperti berikut:  
-• Gugusan Jengka 18: 5–7 November 2025  
+        "content": """Audit dalaman akan dijalankan seperti berikut:
+        
+• Gugusan Jengka 18: 5–7 November 2025
+
 • Gugusan Maokil: 11–13 November 2025  
 
 Sila pastikan semua dokumentasi lengkap sebelum tarikh audit."""
     },
     {
         "date": "November 2025",
-        "title": "🔍 Tiada Audit Luaran Bulan Ini",
+        "title": "📅 Tiada Audit Luaran Bulan Ini",
         "content": """Tiada audit luaran MSPO dijadualkan pada bulan ini.  
 Teruskan mengekalkan pematuhan kepada standard MSPO."""
     }
