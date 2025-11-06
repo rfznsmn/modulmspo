@@ -5,7 +5,7 @@ from datetime import datetime
 # NOTE: Make sure 'feldalogo.png' is in the same directory or replace it with a valid URL.
 st.set_page_config(
     page_title="E-Modul MSPO FELDA 2.0",
-    page_icon="🌿", # Use a relevant emoji as a fallback or placeholder
+    page_icon="feldalogo.png", 
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -246,7 +246,7 @@ with col_email:
     st.markdown("""
     Untuk sebarang pertanyaan berkaitan E-Modul MSPO FELDA:
     * **Email**: kelestarian.f@felda.net.my
-    #* **Hotline**: +603-XXX-XXXX (Fictional Placeholder)
+    * **Hotline**: +603-21912191
     """)
 
 with col_copyright:
