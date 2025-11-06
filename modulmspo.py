@@ -117,9 +117,6 @@ st.info(
 
 st.markdown("---")
 
-import streamlit as st
-from datetime import datetime
-
 # --- Announcement Board (Updated Content) ---
 st.markdown("## 📢 Pengumuman Terkini")
 
