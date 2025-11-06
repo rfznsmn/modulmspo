@@ -215,6 +215,7 @@ modules = {
 }
 
 # Create a grid of 2 columns for the module cards
+
 cols_modules = st.columns(2)
 module_keys = list(modules.keys())
 
@@ -230,10 +231,13 @@ for i, key in enumerate(module_keys):
         </div>
         """, unsafe_allow_html=True)
 
-        # Standard Streamlit button (Recommended over complex HTML buttons)
+        # Ensure the button check directly guards the st.web_browser call
         if st.button(f"📥 Akses Modul {key}", key=f"btn_{key}"):
+            # THIS IS THE CRITICAL LINE: It only executes when the button is clicked.
+            # If the error persists, it could be due to a Streamlit version issue 
+            # or environment restriction on opening new tabs.
             st.web_browser(module['link'])
-
+            
 st.markdown("---")
 
 
