@@ -2,7 +2,7 @@ import streamlit as st
 from datetime import datetime
 
 # --- Page Configuration ---
-# NOTE: Make sure 'feldalogo.png' is in the same directory or replace it with a valid URL.
+
 st.set_page_config(
     page_title="E-Modul MSPO FELDA 2.0",
     page_icon="feldalogo.png", 
@@ -180,34 +180,32 @@ modules = {
     "P1": {
         "title": "Komitmen dan Tanggungjawab Pengurusan",
         "icon": "🤝",
-        "link": "https://feldagov-my.sharepoint.com/personal/jk_felda_feldagov_onmicrosoft_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjk%5Ffelda%5Ffeldagov%5Fonmicrosoft%5Fcom%2FDocuments%2FSupporting%20Documents%20MSPO%202%2E0%2FP1%20Komitmen%20dan%20Tanggungjawab%20Pengurusan&viewid=4533d408%2D9220%2D4295%2Db459%2D4fc98a267c5c&ga=1",
+        "link": "https://feldagov-my.sharepoint.com/:f:/g/personal/jk_felda_feldagov_onmicrosoft_com/EthOPknnDeFKqIWuXEG9nRYBTkn0LkMj8b0H0g7QasBVRQ?e=z6ED5X",
     },
     "P2": {
         "title": "Ketelusan",
         "icon": "📄",
-        "link": "https://feldagov-my.sharepoint.com/personal/jk_felda_feldagov_onmicrosoft_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjk%5Ffelda%5Ffeldagov%5Fonmicrosoft%5Fcom%2FDocuments%2FSupporting%20Documents%20MSPO%202%2E0%2FP2%20Ketelusan&viewid=4533d408%2D9220%2D4295%2Db459%2D4fc98a267c5c&ga=1",
+        "link": "https://feldagov-my.sharepoint.com/:f:/g/personal/jk_felda_feldagov_onmicrosoft_com/EpbAFAB0PpNPgknhRLrA_jkBwbFBNuhMw3oXSy9EB8wnNQ?e=VQo6Xy",
     },
     "P3": {
         "title": "Pematuhan Kepada Undang-Undang",
         "icon": "⚖️",
-        "link": "https://feldagov-my.sharepoint.com/personal/jk_felda_feldagov_onmicrosoft_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjk%5Ffelda%5Ffeldagov%5Fonmicrosoft%5Fcom%2FDocuments%2FSupporting%20Documents%20MSPO%202%2E0%2FP3%20Pematuhan%20kepada%20Keperluan%20Undang%2Dundang&viewid=4533d408%2D9220%2D4295%2Db459%2D4fc98a267c5c&ga=1",
+        "link": "https://feldagov-my.sharepoint.com/:f:/g/personal/jk_felda_feldagov_onmicrosoft_com/Et_7uwJCrHpGkpAxJdMXrJEBxjJcXWWlPgdxFy312OAmfA?e=A1y8T4",
     },
     "P4": {
         "title": "Tanggungjawab Sosial & Keselamatan",
         "icon": "👨‍🏭",
-        "link": "https://feldagov-my.sharepoint.com/personal/jk_felda_feldagov_onmicrosoft_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjk%5Ffelda%5Ffeldagov%5Fonmicrosoft%5Fcom%2FDocuments%2FSupporting%20Documents%20MSPO%202%2E0%2FP4%20Tanggungjawab%20Sosial%2C%20Keselamatan%2C%20Kesihatan%20dan%20Keadaan%20Pekerjaan&viewid=4533d408%2D9220%2D4295%2Db459%2D4fc98a267c5c&ga=1",
+        "link": "https://feldagov-my.sharepoint.com/:f:/g/personal/jk_felda_feldagov_onmicrosoft_com/EvOKSXLalP9NpSxbBSfhY74BievO9jtbnBr7gFYNeceDqw?e=aQV1Fk",
     },
     "P5": {
         "title": "Alam Sekitar & Penjagaan Ekosistem",
         "icon": "🌳",
-        "link": "https://feldagov-my.sharepoint.com/personal/jk_felda_feldagov_onmicrosoft_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjk%5Ffelda%5Ffeldagov%5Fonmicrosoft%5Fcom%2FDocuments%2FSupporting%20Documents%20MSPO%202%2E0%2FP5%20Alam%20Sekitar%2C%20Sumber%20Asli%2C%20Biodiversiti%20dan%20Perkhidmatan%20Ekosistem&viewid=4533d408%2D9220%2D4295%2Db459%2D4fc98a267c5c&ga=1",
+        "link": "https://feldagov-my.sharepoint.com/:f:/g/personal/jk_felda_feldagov_onmicrosoft_com/EuFU6F-Dr85LqbHyfWhL82YBHWA7LuClMHyFC1wbgdVGXA?e=s3aTAo",
     },
     "MANUAL": {
         "title": "Dokumen Manual, Polisi dan Prosedur",
         "icon": "📑",
-        "link": "https://feldagov-my.sharepoint.com/personal/jk_felda_feldagov_onmicrosoft_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjk%5Ffelda%5Ffeldagov%5Fonmicrosoft%5Fcom%2FDocuments%2FSupporting%20Documents%20MSPO%202%2E0%2FP6%20Polisi%20dan%20Prosedur&viewid=4533d408%2D9220%2D4295%2Db459%2D4fc98a267c5c&ga=1",
-     },
-    "ICS": {
+        "link": "https://feldagov-my.sharepoint.com/:f:/g/personal/jk_felda_feldagov_onmicrosoft_com/EtJ5hWHrFxlPjLxT-u7JocEBrBQMJgZrh1v5og2UaQ5gag?e=WHlTq8",
         "title": "Internal Control System-Group Manager",
         "icon": "🗂️",
         "link": "https://feldagov-my.sharepoint.com/:f:/g/personal/jk_felda_feldagov_onmicrosoft_com/Ek-2SBb-y31OiiLzBEzAiBgB22X2yZXvSp0TiwzFQm9sqA?e=bQDYxW",
