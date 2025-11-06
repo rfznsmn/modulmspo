@@ -1,126 +1,213 @@
+# modulmspo_modern_responsive.py
 import streamlit as st
 from datetime import datetime
 
 # --- Page Configuration ---
-
 st.set_page_config(
     page_title="E-Modul MSPO FELDA 2.0",
-    page_icon="feldalogo.png", 
+    page_icon="feldalogo.png",  # FELDA logo (header favicon)
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# --- Custom CSS Styling ---
-# Adjusted for better readability, modern feel, and grid support.
-st.markdown("""
-<style>
-/* General layout and background */
-.stApp {
-    background-color: #F8F8F8; /* Light grey background for professional feel */
-}
-
-/* Titles */
-h1, h2, h3 {
-    color: #1B5E20; /* Dark Green - Primary Brand Color */
-    font-family: 'Montserrat', sans-serif;
-}
-.st-emotion-cache-18ni2g6 { /* Targeting main area padding */
-    padding-top: 2rem;
-    padding-left: 5rem;
-    padding-right: 5rem;
-}
-
-/* Announcement cards (Use st.info/st.success in new code, but keeping card style for flexibility) */
-.announcement-card {
-    background: white;
-    border-radius: 12px; /* Slightly rounder corners */
-    padding: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Stronger but cleaner shadow */
-    transition: transform 0.2s ease;
-    height: 100%; /* Important for columns to align */
-}
-.announcement-card h4 {
-    color: #004D40; /* Darker title for contrast */
-    margin-top: 0;
-}
-.announcement-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
-
-/* Module cards - Modified to look like clean button areas */
-.principle-card {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    border-left: 6px solid #4CAF50; /* Brighter green accent */
-    margin-bottom: 1.5rem;
-    cursor: pointer; /* Suggests clickability */
-    transition: all 0.2s ease;
-    min-height: 120px;
-}
-.principle-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
-.principle-title {
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #2E7D32;
-    margin-bottom: 0.5rem;
-}
-
-/* Streamlit Link Buttons */
-.stButton>button {
-    width: 100%;
-    background: #4CAF50; /* A pleasant green */
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 0.8rem;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-top: 10px; /* Space below card */
-    transition: background 0.3s ease, transform 0.1s ease;
-}
-.stButton>button:hover {
-    background: #388E3C;
-    transform: none; /* Removed translate for standard button feel */
-}
-
-/* Sidebar */
-[data-testid="stSidebar"] {
-    background-color: #E8F5E9; /* Very light green */
-    padding-top: 2rem;
-}
-.sidebar-title {
-    color: #1B5E20;
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-}
-</style>
-""", unsafe_allow_html=True)
-
-# --- Header Section (Use st.image for better integration) ---
-st.image("https://via.placeholder.com/300x50/1B5E20/FFFFFF?text=FELDA+GROUP+LOGO", width=250)
-st.title("🌿 E-Modul MSPO FELDA 2.0")
+# --- Responsive + Modern CSS ---
 st.markdown(
-    "### Portal Latihan Pensijilan **_Malaysian Sustainable Palm Oil (MSPO) 2.0_**"
+    """
+    <style>
+    /* --- Base / App --- */
+    :root{
+        --felda-orange: #FF6600;
+        --felda-dark: #2B2B2B;
+        --felda-earth: #6B4B2A;
+        --felda-green: #1B5E20;
+        --bg: #FAFAF9;
+        --card-bg: #FFFFFF;
+        --muted: #6B6B6B;
+    }
+
+    .stApp {
+        background-color: var(--bg);
+        color: var(--felda-dark);
+        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    /* --- Header / logo --- */
+    .header-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.5rem 1rem;
+        margin-bottom: 0.25rem;
+    }
+    .header-logo {
+        width: 220px;
+        max-width: 35%;
+        height: auto;
+    }
+    .header-title {
+        margin: 0;
+        padding: 0;
+    }
+    .header-sub {
+        margin-top: -0.25rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+    }
+
+    /* --- Cards --- */
+    .card {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 1rem;
+        box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
+        border: 1px solid rgba(16,24,40,0.03);
+    }
+
+    .announcement-card {
+        padding: 1rem;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+        transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .announcement-card h4 {
+        margin: 0 0 0.25rem 0;
+        color: var(--felda-earth);
+        font-size: 1.05rem;
+    }
+    .announcement-card p.date {
+        margin: 0 0 0.5rem 0;
+        color: var(--muted);
+        font-size: 0.88rem;
+    }
+
+    .principle-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        justify-content: space-between;
+        padding: 1rem;
+        border-radius: 10px;
+        min-height: 110px;
+    }
+    .principle-title {
+        font-weight: 700;
+        color: var(--felda-green);
+        font-size: 1rem;
+    }
+    .principle-desc {
+        color: var(--muted);
+        font-size: 0.95rem;
+    }
+
+    /* Buttons */
+    .stButton>button {
+        border-radius: 8px;
+        padding: 0.6rem 0.8rem;
+        font-weight: 700;
+        font-size: 0.95rem;
+        border: none;
+    }
+    .link-btn {
+        background: linear-gradient(90deg, var(--felda-orange), #e85a00);
+        color: white !important;
+        border: none !important;
+        box-shadow: 0 6px 14px rgba(255,102,0,0.15);
+    }
+
+    /* Footer small text */
+    .footer-small {
+        color: var(--muted);
+        font-size: 0.85rem;
+    }
+
+    /* Sidebar tweaks */
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #fff, #FAFBFA);
+        padding: 1rem 0.75rem 2rem 0.75rem;
+    }
+    .sidebar-logo {
+        width: 160px;
+        max-width: 100%;
+        margin: 0 auto 0.5rem auto;
+        display: block;
+    }
+    .sidebar-title {
+        color: var(--felda-green);
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+        font-size: 0.98rem;
+    }
+
+    /* --- Responsive behavior --- */
+    /* Make cards and buttons full width on small screens and adjust padding */
+    @media (max-width: 900px) {
+        .header-logo { width: 160px; }
+        .header-row { padding: 0.5rem 0.5rem; gap: 0.6rem; }
+        .stApp { padding: 0; }
+    }
+
+    @media (max-width: 768px) {
+        .header-logo { width: 120px; }
+        .header-title { font-size: 1.05rem; }
+        .header-sub { font-size: 0.9rem; }
+
+        /* Force streamlit columns to behave like stacked blocks */
+        .css-1lcbmhc { /* row block wrapper - fallback, may vary */
+            flex-direction: column !important;
+        }
+        .css-1d391kg, .css-12oz5g7 { /* common column class fallbacks */
+            width: 100% !important;
+            min-width: 100% !important;
+        }
+
+        .announcement-card, .principle-card, .card {
+            width: 100% !important;
+            box-sizing: border-box;
+        }
+
+        .stButton>button {
+            width: 100% !important;
+        }
+    }
+
+    /* Accessibility: ensure text contrast and readable sizes */
+    h1, h2, h3, h4, p, li, a, span, div {
+        color: var(--felda-dark) !important;
+    }
+
+    </style>
+    """,
+    unsafe_allow_html=True,
 )
 
-st.info(
-    "Selamat datang ke **E-Modul MSPO FELDA 2.0** — satu platform latihan digital bagi memantapkan pemahaman dan pelaksanaan prinsip-prinsip MSPO di semua rancangan FELDA. Gunakan menu di bawah untuk akses modul."
+# --- Header with FELDA logo (top) ---
+# Official FELDA logo (white background, orange "f") - hosted on FELDA website
+FELDA_LOGO = "https://felda.gov.my/images/photo/logo/logo.png"
+
+# Use a header row: logo + title
+st.markdown(
+    f"""
+    <div class="header-row">
+        <img src="{FELDA_LOGO}" class="header-logo" alt="FELDA logo" />
+        <div>
+            <h1 class="header-title">🌿 E-Modul MSPO FELDA 2.0</h1>
+            <div class="header-sub">Portal Latihan Pensijilan — Malaysian Sustainable Palm Oil (MSPO) 2.0</div>
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True,
 )
 
 st.markdown("---")
 
-# --- Announcement Board (Updated Content) ---
+# --- Intro / Info ---
+st.info(
+    "Selamat datang ke **E-Modul MSPO FELDA 2.0** — platform latihan digital untuk meningkatkan pemahaman dan pelaksanaan prinsip MSPO. Gunakan butang di bawah setiap modul untuk membuka sumber di SharePoint/OneDrive."
+)
+
 st.markdown("## 📢 Pengumuman Terkini")
 
-# Store the multi-line content using HTML lists for better formatting
+# Announcement data (kept simple and readable)
 announcements = [
     {
         "date": "1 November 2025",
@@ -128,158 +215,35 @@ announcements = [
         "content": "Tahniah kepada semua rancangan atas kejayaan ini. FELDA kini berjaya mencapai 100% pensijilan MSPO bagi semua rancangan, hasil usaha berterusan semua pihak."
     },
     {
-        "date": "November 2025",
-        "title": "📅 Jadual Audit Dalaman",
-        "content": """
-        Audit dalaman akan dijalankan seperti berikut:
-        <ul style="list-style-type: none; padding-left: 0.5rem;">
-            <li><span style="font-weight: bold;">Gugusan Jengka 18:</span> 5–7 Nov 2025</li>
-            <li><span style="font-weight: bold;">Gugusan Maokil:</span> 11–13 Nov 2025</li>
-            <li><span style="font-weight: bold;">Gugusan Kemahang:</span> 18–20 Nov 2025 - DITANGGUHKAN</li>
-        </ul>
-        <p style='margin-top: 0.5rem;'>Sila pastikan semua dokumentasi lengkap sebelum tarikh audit.</p>
-        """
+        "date": "5–7 Nov 2025",
+        "title": "Audit Dalaman - Gugusan Jengka 18",
+        "content": "Sila pastikan semua dokumentasi lengkap sebelum tarikh audit. Rujuk checklist dalaman dan sediakan semua bukti objektif yang berkaitan."
     },
     {
-        "date": "November 2025",
-        "title": "📅 Jadual Audit Luaran",
-        "content": """
-        Audit luaran akan dijalankan seperti berikut:
-        <ul style="list-style-type: none; padding-left: 0.5rem;">
-          <li><span style="font-weight: bold;">Gugusan Triang:</span> 18-20 Nov 2025</li>
-        </ul>
-        <p style='margin-top: 0.5rem;'>Teruskan mengekalkan pematuhan kepada standard MSPO. Semak status di bahagian Rujukan.</p>
-        """
+        "date": "18–20 Nov 2025",
+        "title": "Audit Luaran - Gugusan Triang",
+        "content": "Pastikan akses pintu masuk log dan rekod latihan pekerja dikemaskini."
     }
 ]
 
-# Create a 2-column layout for announcements
-cols_announcements = st.columns(2)
-for i, a in enumerate(announcements):
-    col = cols_announcements[i % 2] # Cycle through columns 0 and 1
+# Render announcements in two columns on wider screens, stacked on mobile
+cols = st.columns(2)
+for i, ann in enumerate(announcements):
+    col = cols[i % 2]
     with col:
-        # NOTE: The content is now rendered directly within the announcement-card HTML.
-        st.markdown(f"""
-        <div class="announcement-card">
-            <h4>{a['title']}</h4>
-            <p style='color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;'>{a['date']}</p>
-            {a['content']} 
-        </div>
-        """, unsafe_allow_html=True)
-        # Add a subtle separator for the third announcement if it's the last one
-        if i == len(announcements) - 1 and len(announcements) % 2 != 0:
-             st.markdown("</div>", unsafe_allow_html=True)
-
-st.markdown("---")
-
-# --- Module Links (Using st.columns for professional grid) ---
-st.markdown("## 📚 Modul MSPO 2.0 - Akses Sumber")
-st.markdown("Sila klik butang **Akses Modul** untuk melihat dokumen rujukan di OneDrive/Sharepoint.")
-
-modules = {
-    "P1": {
-        "title": "Komitmen dan Tanggungjawab Pengurusan",
-        "icon": "🤝",
-        "link": "https://feldagov-my.sharepoint.com/:f:/g/personal/jk_felda_feldagov_onmicrosoft_com/EthOPknnDeFKqIWuXEG9nRYBTkn0LkMj8b0H0g7QasBVRQ?e=z6ED5X",
-    },
-    "P2": {
-        "title": "Ketelusan",
-        "icon": "📄",
-        "link": "https://feldagov-my.sharepoint.com/:f:/g/personal/jk_felda_feldagov_onmicrosoft_com/EpbAFAB0PpNPgknhRLrA_jkBwbFBNuhMw3oXSy9EB8wnNQ?e=VQo6Xy",
-    },
-    "P3": {
-        "title": "Pematuhan Kepada Undang-Undang",
-        "icon": "⚖️",
-        "link": "https://feldagov-my.sharepoint.com/:f:/g/personal/jk_felda_feldagov_onmicrosoft_com/Et_7uwJCrHpGkpAxJdMXrJEBxjJcXWWlPgdxFy312OAmfA?e=A1y8T4",
-    },
-    "P4": {
-        "title": "Tanggungjawab Sosial & Keselamatan",
-        "icon": "👨‍🏭",
-        "link": "https://feldagov-my.sharepoint.com/:f:/g/personal/jk_felda_feldagov_onmicrosoft_com/EvOKSXLalP9NpSxbBSfhY74BievO9jtbnBr7gFYNeceDqw?e=aQV1Fk",
-    },
-    "P5": {
-        "title": "Alam Sekitar & Penjagaan Ekosistem",
-        "icon": "🌳",
-        "link": "https://feldagov-my.sharepoint.com/:f:/g/personal/jk_felda_feldagov_onmicrosoft_com/EuFU6F-Dr85LqbHyfWhL82YBHWA7LuClMHyFC1wbgdVGXA?e=s3aTAo",
-    },
-    "MANUAL": {
-        "title": "Dokumen Manual, Polisi dan Prosedur",
-        "icon": "📑",
-        "link": "https://feldagov-my.sharepoint.com/:f:/g/personal/jk_felda_feldagov_onmicrosoft_com/EtJ5hWHrFxlPjLxT-u7JocEBrBQMJgZrh1v5og2UaQ5gag?e=WHlTq8",
-        "title": "Internal Control System-Group Manager",
-        "icon": "🗂️",
-        "link": "https://feldagov-my.sharepoint.com/:f:/g/personal/jk_felda_feldagov_onmicrosoft_com/Ek-2SBb-y31OiiLzBEzAiBgB22X2yZXvSp0TiwzFQm9sqA?e=bQDYxW",
-    }
-}
-
-# Create a grid of 2 columns for the module cards
-cols_modules = st.columns(2)
-module_keys = list(modules.keys())
-
-for i, key in enumerate(module_keys):
-    module = modules[key]
-    col = cols_modules[i % 2] # Cycle through columns 0 and 1
-
-    with col:
-        # Principle Card (uses markdown for visual)
-        st.markdown(f"""
-        <div class="principle-card">
-            <div class="principle-title">{module['icon']} {key}: {module['title']}</div>
-        </div>
-        """, unsafe_allow_html=True)
-
-        # FIXED: Using st.link_button instead of st.button + st.web_browser
-        st.link_button(
-            label=f"📥 Akses Modul {key}",
-            url=module['link'],
-            use_container_width=True
+        st.markdown(
+            f"""
+            <div class="card announcement-card">
+                <h4>{ann['title']}</h4>
+                <p class="date">{ann['date']}</p>
+                <div style="color: #444; font-size:0.95rem;">{ann['content']}</div>
+            </div>
+            """,
+            unsafe_allow_html=True,
         )
-            
+
 st.markdown("---")
 
-
-# --- Footer ---
-st.markdown("## 📞 Hubungi Kami")
-
-col_email, col_copyright = st.columns([2, 1])
-
-with col_email:
-    st.markdown("""
-    Untuk sebarang pertanyaan berkaitan E-Modul MSPO FELDA:
-    * **Email**: kelestarian.f@felda.net.my
-    * **Hotline**: +603-21912191
-    """)
-
-with col_copyright:
-    st.markdown(f"""
-    <div style="text-align: right; color: #666; font-size: 0.85rem;">
-    © {datetime.now().year} FELDA | Malaysian Sustainable Palm Oil (MSPO)
-    </div>
-    """, unsafe_allow_html=True)
-
-
-# --- Sidebar (More structured and useful) ---
-with st.sidebar:
-    # Use a solid image/color for the header logo
-    st.markdown('<div style="text-align: center;">', unsafe_allow_html=True)
-    st.image("https://via.placeholder.com/250x70/1B5E20/FFFFFF?text=FELDA+MSPO+2.0", use_column_width=True)
-    st.markdown('</div>', unsafe_allow_html=True)
-
-    st.markdown('<div class="sidebar-title">📖 Panduan Penggunaan</div>', unsafe_allow_html=True)
-    st.info("""
-    1. **Pilih Prinsip:** Tentukan modul MSPO yang ingin dipelajari (P1 hingga P5).
-    2. **Akses Modul:** Klik butang **'Akses Modul'** untuk setiap prinsip.
-    3. **Tinjauan:** Dokumen rujukan akan dibuka di pelayar baru (OneDrive/SharePoint).
-    """)
-
-    st.markdown('<div class="sidebar-title">🌱 Tentang MSPO</div>', unsafe_allow_html=True)
-    st.success("""
-    **MSPO (Malaysian Sustainable Palm Oil)** adalah skim pensijilan nasional yang memastikan pengeluaran minyak sawit secara **mampan** melalui amalan terbaik, pematuhan undang-undang, dan tanggungjawab sosial.
-    """)
-
-    # Current Date for reference
-    st.markdown(f"""
-    <div style="margin-top: 2rem; border-top: 1px solid #ddd; padding-top: 1rem;">
-    <p style='font-size: 0.8rem; color: #666;'>Tarikh Terkini: {datetime.now().strftime("%d %B %Y")}</p>
-    </div>
-    """, unsafe_allow_html=True)
+# --- Module Links Section ---
+st.markdown("## 📚 Modul MSPO 2.0 — Akses Sumber")
+st.mark
