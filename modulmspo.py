@@ -262,16 +262,14 @@ with col_copyright:
 
 # At the bottom of your page
 with st.expander("📖 Panduan Penggunaan", expanded=False):
-    col1, col2 = st.columns([1, 3])
-    with col1:
-        st.image("https://via.placeholder.com/200x50/1B5E20/FFFFFF?text=FELDA", use_column_width=True)
-    with col2:
-        st.info("""
+    st.markdown('<div class="sidebar-title">📑 Panduan Penggunaan</div>', unsafe_allow_html=True)
+    st.success("""
         1. **Pilih Prinsip:** Tentukan modul MSPO yang ingin dipelajari (P1 hingga P5).
         2. **Akses Modul:** Klik butang **'Akses Modul'** untuk setiap prinsip.
         3. **Tinjauan:** Dokumen rujukan akan dibuka di pelayar baru (OneDrive/SharePoint).
         """)
 
+with st.expander("📖 Tentang MSPO", expanded=False):
     st.markdown('<div class="sidebar-title">🌱 Tentang MSPO</div>', unsafe_allow_html=True)
     st.success("""
     **MSPO (Malaysian Sustainable Palm Oil)** adalah skim pensijilan nasional yang memastikan pengeluaran minyak sawit secara **mampan** melalui amalan terbaik, pematuhan undang-undang, dan tanggungjawab sosial.
