@@ -273,7 +273,8 @@ st.markdown(f"""
     </div>
     """, unsafe_allow_html=True)
     # Current Date for reference
-    st.markdown(f"""
+    
+st.markdown(f"""
     <div style="margin-top: 2rem; border-top: 1px solid #ddd; padding-top: 1rem;">
     <p style='font-size: 0.8rem; color: #666;'>Tarikh Terkini: {datetime.now().strftime("%d %B %Y")}</p>
     </div>
